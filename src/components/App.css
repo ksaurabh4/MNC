@@ -1,0 +1,29 @@
+:root {
+  --primary-color: #4ac29a;
+  --primary-color-dark: #6e8d87;
+  --primary-color-light: #bdfff3;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  line-height: 1.6;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  background-image: url('/img/bg.JPG');
+  background-size: cover;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr minmax(50rem, 150%) 1fr;
+  flex-direction: column;
+}
