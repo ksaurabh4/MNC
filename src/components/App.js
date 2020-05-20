@@ -9,6 +9,7 @@ import AboutUs from '../components/AboutUs';
 import ContactUs from '../components/ContactUs';
 import Login from '../components/Login';
 import Join from '../components/Join';
+import Tasks from './Tasks/Tasks';
 import './App.css';
 
 class App extends React.Component {
@@ -23,6 +24,8 @@ class App extends React.Component {
             <Route path='/contact' exact component={ContactUs} />
             <Route path='/join' exact component={Join} />
             <Route path='/login' exact component={Login} />
+            <Route path='/tasks' exact component={Tasks} />
+            <Route path='/tasks/:id' exact component={Tasks} />
           </MainSection>
           <Footer />
         </Router>

@@ -1,6 +1,8 @@
 import React from 'react';
 import FormComponent from './Form/FormComponent';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { signUp, fetchUser } from '../actions';
 
 class Join extends React.Component {
   formSwitch = () => {
@@ -10,17 +12,26 @@ class Join extends React.Component {
       </h5>
     );
   };
+
+  onFormSubmit = async (formValues) => {
+    await this.props.signUp(formValues);
+    this.props.fetchUser();
+  };
   render() {
     return (
       <div>
         <FormComponent
           btnText='Sign up'
-          fieldCount={3}
+          formName='join'
           formSwitch={this.formSwitch()}
+          onSubmit={this.onFormSubmit}
         />
       </div>
     );
   }
 }
-
-export default Join;
+const mapStateToProps = (state) => {
+  //console.log(state);
+  return {};
+};
+export default connect(mapStateToProps, { signUp, fetchUser })(Join);

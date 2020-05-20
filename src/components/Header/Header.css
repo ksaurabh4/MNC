@@ -17,13 +17,23 @@
 
 .nav {
   display: flex;
-  width: 50%;
-  justify-content: flex-end;
-  list-style: none;
   width: 70vw;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
   font-size: 1.5rem;
   font-weight: 300;
 }
+
+@media only screen and (max-width: 700px) {
+  .header {
+    flex-direction: column;
+  }
+  .nav {
+    justify-content: flex-end;
+  }
+}
+
 .nav__item {
   margin-left: 3.5rem;
   transition: all 0.2s;
@@ -34,23 +44,58 @@
   text-decoration: none;
 }
 
-.nav__item:hover {
+.nav__item:hover:not(:last-child) {
   margin-left: 3.5rem;
   transform: scale(1.2) translateY(1px);
 }
 .cta {
   padding: 0.2rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   font-weight: 400;
   text-transform: uppercase;
 }
+.nav__user {
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-left: 2rem;
+  margin-right: none;
+  overflow: hidden;
+}
+.nav__user--avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 100%;
+}
+.nav__user--name {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 1.5rem;
+  font-size: 1rem;
+  right: 1.7rem;
+  color: transparent;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.nav__user--name:hover {
+  position: absolute;
+  top: 6rem;
+  font-size: 1.1rem;
+  right: 1rem;
+  color: #fff;
+}
+
 .btn--orange {
   background-color: #f39c12;
+  color: #fff;
 }
 .btn--red {
   background-color: #ff0000;
+  color: #fff;
 }
 
 .btn--green {
+  color: #fff;
   background-color: #2ecc71;
 }
