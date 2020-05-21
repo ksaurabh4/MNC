@@ -12,7 +12,7 @@ class Home extends React.Component {
       );
     }
     return (
-      <div style={{textAlign='center'}}>
+      <div style={{ textAlign: 'center' }}>
         <Link to='/tasks' className='btn cta'>
           My Task List
         </Link>
