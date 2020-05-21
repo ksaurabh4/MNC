@@ -41,8 +41,10 @@ const List = (props) => {
                 <img src='/img/profile-pic.jpg' alt='task assignee pic' />
               </div>
               <div className='list__item__meta__detail'>
-                <h5>{task.completed ? 'Completed' : 'Pending'}</h5>
-                <p>June 01 2020</p>
+                <h5>{task.completed ? 'Completed' : 'Due'}</h5>
+                <p>
+                  {task.completed ? task.updatedAt.slice(0, 10) : `2020-06-02`}
+                </p>
               </div>
             </div>
           </div>
@@ -77,6 +79,10 @@ const List = (props) => {
   };
   return (
     <div className='list'>
+      <form className='search__box'>
+        <input type='text' class='search' />
+        <button>Search</button>
+      </form>
       <div className='list__header'>
         <h2 className='list__name'>Tasks</h2>
         <Link to={`/tasks/new`} className='btn cta btn--orange'>

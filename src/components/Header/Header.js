@@ -28,7 +28,7 @@ class Header extends React.Component {
               Logout
             </a>
           </li>
-          <li>
+          <li className='user__profile'>
             <div className='nav__user'>
               <img
                 className='nav__user--avatar'

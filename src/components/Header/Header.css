@@ -16,7 +16,7 @@
 }
 
 .nav {
-  width: 70%;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -152,7 +152,7 @@
     position: fixed;
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(to right bottom, #01b671ed, #000000);
+    background-image: linear-gradient(to right bottom, #01b671, #000000);
     top: 10vh;
     left: -100%;
     display: flex;
@@ -162,16 +162,27 @@
     padding-right: 2rem;
     transition: all 0.5s;
   }
+  .nav__user {
+    width: 5.5rem;
+    height: 5.5rem;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .user__profile {
+    position: fixed;
+    bottom: 2.5rem;
+  }
   .nav li {
     display: block;
+    height: 8rem;
   }
+
   .nav li a {
     font-size: 2rem;
     /* border-bottom: 1px solid #777; */
   }
-  .nav:last-child {
-    margin-top: 0;
-  }
+
   .nav li a.active,
   .nav li a:hover {
   }

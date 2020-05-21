@@ -3,6 +3,42 @@
   flex-direction: column;
   padding: 5rem;
 }
+
+.search__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 70%;
+  align-self: center;
+}
+.search {
+  color: rgb(100, 99, 99);
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
+  overflow: hidden;
+  outline: none;
+}
+.search__box button {
+  display: flex;
+  align-items: center;
+  background-color: hsl(165, 96%, 33%);
+  color: #fff;
+  align-self: center;
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+  cursor: pointer;
+}
+.search,
+.search__box button {
+  height: 3.5rem;
+  border: none;
+  box-shadow: 0.25rem 0.5rem 2rem rgba(0, 0, 0, 0.37);
+  padding: 1rem 1.5rem;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
 .list__header {
   display: flex;
   justify-content: space-between;
