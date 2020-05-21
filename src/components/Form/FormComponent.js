@@ -112,7 +112,7 @@ class FormComponent extends React.Component {
           onSubmit={this.props.handleSubmit(this.onFormSubmit)}
           className='form__form'
         >
-          <img src='/img/logo.png' alt='logo' className='form__logo' />
+          <div className='form__logo'>MNC</div>
           {this.renderFormField(this.props.formName)}
 
           <button className='form__btn btn--green'>{this.props.btnText}</button>

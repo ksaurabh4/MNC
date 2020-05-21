@@ -12,10 +12,10 @@
   margin: 2rem 0;
 }
 .form__logo {
-  width: 12rem;
-  height: auto;
-  margin-bottom: 1rem;
-  display: inline-block;
+  color: #fff;
+  font-size: 3.5rem;
+  line-height: 8rem;
+  font-weight: 400;
 }
 
 .form__form {

@@ -10,7 +10,6 @@ class TaskList extends React.Component {
   }
 
   render() {
-    console.log(this.props.tasks);
     return (
       <div>
         <List tasks={this.props.tasks} />;

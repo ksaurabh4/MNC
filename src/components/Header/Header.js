@@ -19,32 +19,41 @@ class Header extends React.Component {
         `img/profile-pic.jpg`;
       return (
         <React.Fragment>
-          <button
-            className='nav__item cta btn--green btn__logout'
-            onClick={() => this.onLogoutButtonClick(this.props.user.token)}
-          >
-            Logout
-          </button>
-          <div className='nav__user'>
-            <img
-              className='nav__user--avatar'
-              alt='User Avatar Pic'
-              src={avatarURL || null}
-            />
-            <p className='nav__user--name'>{this.props.user.name}</p>
-          </div>
+          <li>
+            <a
+              href='#'
+              className='nav__item cta btn--green'
+              onClick={() => this.onLogoutButtonClick(this.props.user.token)}
+            >
+              Logout
+            </a>
+          </li>
+          <li>
+            <div className='nav__user'>
+              <img
+                className='nav__user--avatar'
+                alt='User Avatar Pic'
+                src={avatarURL || null}
+              />
+              <p className='nav__user--name'>{this.props.user.name}</p>
+            </div>
+          </li>
         </React.Fragment>
       );
     }
 
     return (
       <React.Fragment>
-        <Link className='nav__item cta btn--orange' to={`/join`}>
-          Join
-        </Link>
-        <Link className='nav__item cta btn--green' to={`/login`}>
-          Login
-        </Link>
+        <li>
+          <Link className='nav__item cta btn--orange' to={`/join`}>
+            Join
+          </Link>
+        </li>
+        <li>
+          <Link className='nav__item cta btn--green' to={`/login`}>
+            Login
+          </Link>
+        </li>
       </React.Fragment>
     );
   };
@@ -52,23 +61,31 @@ class Header extends React.Component {
   render() {
     return (
       <header className='header'>
-        <div className='logo'>
-          <img src='/img/logo.png' alt='site logo' />
-        </div>
+        {/* <button className='nav-btn'></button> */}
+        <input type='checkbox' id='check' />
+        <label htmlFor='check' className='nav-btn'></label>
+        <Link to='/' className='logo'>
+          MNC
+        </Link>
 
-        <button className='nav-btn'></button>
         <ul className='nav'>
-          <Link className='nav__item' to={`/`}>
-            Home
-          </Link>
+          <li>
+            <Link className='nav__item active' to={`/`}>
+              Home
+            </Link>
+          </li>
 
-          <Link className='nav__item' to={`/about`}>
-            About Us
-          </Link>
+          <li>
+            <Link className='nav__item' to={`/about`}>
+              About
+            </Link>
+          </li>
 
-          <Link className='nav__item' to={`/contact`}>
-            Contact Us
-          </Link>
+          <li>
+            <Link className='nav__item' to={`/contact`}>
+              Contact
+            </Link>
+          </li>
 
           {this.loginLogoutButton()}
         </ul>

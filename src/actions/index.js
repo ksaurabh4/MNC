@@ -59,7 +59,7 @@ export const fetchTasks = (token) => async (dispatch) => {
       url: `/tasks`,
       headers: { Authorization: `Bearer ${token}` },
     });
-    console.log(res.data);
+
     dispatch({ type: TYPES.FETCH_TASKS, payload: res.data });
   } catch (error) {
     console.log(error);

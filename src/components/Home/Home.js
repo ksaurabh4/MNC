@@ -4,8 +4,15 @@ import { connect } from 'react-redux';
 
 class Home extends React.Component {
   render() {
+    if (!this.props.user.id) {
+      return (
+        <div>
+          <h2>You are not login</h2>
+        </div>
+      );
+    }
     return (
-      <div>
+      <div style={{textAlign='center'}}>
         <Link to='/tasks' className='btn cta'>
           My Task List
         </Link>
