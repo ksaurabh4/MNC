@@ -24,7 +24,7 @@ const List = (props) => {
               </div>
               <div className='list__item__meta__detail'>
                 <h5>Created</h5>
-                <p>{task.createdAt}</p>
+                <p>{task.createdAt.slice(0, 10)}</p>
               </div>
             </div>
             <div className='item__widget'>
@@ -33,7 +33,7 @@ const List = (props) => {
               </div>
               <div className='list__item__meta__detail'>
                 <h5>Assigned</h5>
-                <p>May 18 2020</p>
+                <p>{task.updatedAt.slice(0, 10)}</p>
               </div>
             </div>
             <div className='item__widget'>

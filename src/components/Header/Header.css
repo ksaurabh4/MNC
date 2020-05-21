@@ -31,7 +31,6 @@
   cursor: pointer;
   color: #fff;
   outline: none;
-  display: flex;
   text-decoration: none;
 }
 
@@ -97,11 +96,64 @@
   padding: 0.5rem 1.5rem;
 }
 
+.nav-btn {
+  border: none;
+  border-radius: 0;
+  padding-right: 1rem;
+  background-color: #fff;
+  height: 2px;
+  width: 4.5rem;
+  position: absolute;
+  right: 2rem;
+  display: none;
+  outline: none;
+}
+.nav-btn::before,
+.nav-btn::after {
+  background-color: #fff;
+  content: '';
+  height: 2px;
+  width: 4.5rem;
+  display: block;
+}
+
+.nav-btn::before {
+  transform: translateY(-1.5rem);
+}
+.nav-btn::after {
+  transform: translateY(1.5rem);
+}
+
 @media only screen and (max-width: 700px) {
   .header {
-    flex-direction: column;
+    height: auto;
+    padding: 2rem;
   }
   .nav {
-    justify-content: flex-end;
+    position: absolute;
+    top: 7.6rem;
+    right: 0rem;
+    display: none;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    background-image: linear-gradient(to right bottom, #0000000a, #00000073);
+    width: 100%;
+    padding-right: 2rem;
+  }
+  .nav * {
+    margin-top: 0.5rem;
+  }
+  .nav:not(:last-child) a {
+    border-bottom: 1px solid #777;
+  }
+  .nav:last-child {
+    margin-top: 0;
+  }
+  .nav-btn {
+    display: block;
+  }
+  .nav-btn:hover + .nav,
+  .nav-btn:active + .nav {
+    display: flex;
   }
 }

@@ -55,6 +55,8 @@ class Header extends React.Component {
         <div className='logo'>
           <img src='/img/logo.png' alt='site logo' />
         </div>
+
+        <button className='nav-btn'></button>
         <ul className='nav'>
           <Link className='nav__item' to={`/`}>
             Home
