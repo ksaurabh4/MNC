@@ -91,8 +91,8 @@ export const addTask = (formValues, token) => async (dispatch) => {
       },
       headers: { Authorization: `Bearer ${token}` },
     });
-    console.log(res.data);
     dispatch({ type: TYPES.ADD_TASK, payload: res.data });
+    history.push('/tasks');
   } catch (error) {
     console.log(error);
   }
@@ -108,7 +108,6 @@ export const editTask = (formValues, token, id) => async (dispatch) => {
       },
       headers: { Authorization: `Bearer ${token}` },
     });
-    console.log(res.data);
     dispatch({ type: TYPES.EDIT_TASK, payload: res.data });
     history.push('/tasks');
   } catch (error) {
@@ -123,7 +122,6 @@ export const deleteTask = (token, id) => async (dispatch) => {
       url: `/tasks/${id}`,
       headers: { Authorization: `Bearer ${token}` },
     });
-    console.log(res.data);
     dispatch({ type: TYPES.DELETE_TASK, payload: res.data });
     history.push('/tasks');
   } catch (error) {
