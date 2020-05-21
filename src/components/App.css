@@ -20,6 +20,7 @@ body {
   font-weight: 400;
   background-image: url('/img/bg.JPG');
   background-size: cover;
+  position: relative;
 }
 
 .container {

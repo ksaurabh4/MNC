@@ -1,9 +1,9 @@
 import React from 'react';
-import FormComponent from './Form/FormComponent';
+import FormComponent from '../Form/FormComponent';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { signIn, fetchUser } from '../actions/index';
-import history from '../history';
+import { signIn, fetchUser } from '../../actions/index';
+import history from '../../history';
 
 class Login extends React.Component {
   componentDidMount() {

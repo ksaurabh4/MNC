@@ -3,7 +3,7 @@ import FormComponent from '../Form/FormComponent';
 import { connect } from 'react-redux';
 import { addTask } from '../../actions';
 
-class Task extends React.Component {
+class CreateTask extends React.Component {
   onFormSubmit = (formValues) => {
     this.props.addTask(formValues, this.props.user.token);
   };
@@ -23,4 +23,4 @@ class Task extends React.Component {
 const mapStateToProps = (state) => {
   return { user: state.auth };
 };
-export default connect(mapStateToProps, { addTask })(Task);
+export default connect(mapStateToProps, { addTask })(CreateTask);

@@ -1,8 +1,8 @@
 import React from 'react';
-import FormComponent from './Form/FormComponent';
+import FormComponent from '../Form/FormComponent';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { signUp, fetchUser } from '../actions';
+import { signUp, fetchUser } from '../../actions';
 
 class Join extends React.Component {
   formSwitch = () => {

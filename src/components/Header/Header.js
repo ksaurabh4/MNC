@@ -8,23 +8,23 @@ class Header extends React.Component {
     this.props.fetchUser();
   }
 
+  onLogoutButtonClick = (token) => {
+    this.props.signOut(token);
+  };
+
   loginLogoutButton = () => {
-    const onLogoutButtonClick = (token) => {
-      this.props.signOut(token);
-    };
     if (this.props.user.id) {
       const avatarURL =
         `https://kumar-task-manager-api.herokuapp.com/users/${this.props.user.id}/avatar/` ||
         `img/profile-pic.jpg`;
       return (
         <React.Fragment>
-          <Link
-            to={'/login'}
-            className='nav__item cta btn--green'
-            onClick={() => onLogoutButtonClick(this.props.user.token)}
+          <button
+            className='nav__item cta btn--green btn__logout'
+            onClick={() => this.onLogoutButtonClick(this.props.user.token)}
           >
             Logout
-          </Link>
+          </button>
           <div className='nav__user'>
             <img
               className='nav__user--avatar'

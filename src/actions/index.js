@@ -51,9 +51,36 @@ export const signOut = (token) => async (dispatch) => {
   history.push('/login');
 };
 
-//Task Related Actions
+//TASK RELATED ACTIONS//
+export const fetchTasks = (token) => async (dispatch) => {
+  try {
+    const res = await api({
+      method: 'get',
+      url: `/tasks`,
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    console.log(res.data);
+    dispatch({ type: TYPES.FETCH_TASKS, payload: res.data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const fetchTask = (token, id) => async (dispatch) => {
+  try {
+    const res = await api({
+      method: 'get',
+      url: `/tasks/${id}`,
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    console.log(res.data);
+    dispatch({ type: TYPES.FETCH_TASK, payload: res.data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const addTask = (formValues, token) => async (dispatch) => {
-  //console.log(formValues, token);
   try {
     const res = await api({
       method: 'post',
@@ -71,6 +98,35 @@ export const addTask = (formValues, token) => async (dispatch) => {
   }
 };
 export const editTask = (formValues, token, id) => async (dispatch) => {
-  //const res = await api.post(`/tasks/${id}`, formValues);
-  // dispatch({ type: TYPES.EDIT_TASK });
+  try {
+    const res = await api({
+      method: 'patch',
+      url: `/tasks/${id}`,
+      data: {
+        description: formValues.description,
+        completed: formValues.status,
+      },
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    console.log(res.data);
+    dispatch({ type: TYPES.EDIT_TASK, payload: res.data });
+    history.push('/tasks');
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteTask = (token, id) => async (dispatch) => {
+  try {
+    const res = await api({
+      method: 'delete',
+      url: `/tasks/${id}`,
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    console.log(res.data);
+    dispatch({ type: TYPES.DELETE_TASK, payload: res.data });
+    history.push('/tasks');
+  } catch (error) {
+    console.log(error);
+  }
 };
