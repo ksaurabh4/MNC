@@ -4,7 +4,6 @@
   color: #fff;
   font-size: 1.3rem;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: fixed;
+  bottom: 0;
 }

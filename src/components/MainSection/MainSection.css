@@ -1,7 +1,6 @@
 .main {
   width: 100%;
-  height: auto;
   display: flex;
+  flex: 1;
   justify-content: center;
-  flex-grow: 1;
 }

@@ -24,7 +24,18 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-rows: 1fr minmax(50rem, 150%) 1fr;
+  display: flex;
   flex-direction: column;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 32.5%;
+  }
 }
