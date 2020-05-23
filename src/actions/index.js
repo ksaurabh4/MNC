@@ -53,17 +53,39 @@ export const signOut = (token) => async (dispatch) => {
 
 //TASK RELATED ACTIONS//
 export const fetchTasks = (token) => async (dispatch) => {
+  // const url = () => {
+  //   if (value === 'true' || value === 'false') {
+  //     return `/tasks/?completed=${value}`;
+  //   } else {
+  //     return `/tasks`;
+  //   }
+  // };
   try {
     const res = await api({
       method: 'get',
       url: `/tasks`,
       headers: { Authorization: `Bearer ${token}` },
     });
+    console.log(res);
 
     dispatch({ type: TYPES.FETCH_TASKS, payload: res.data });
   } catch (error) {
     console.log(error);
   }
+};
+
+export const fetchTasksByFilter = (token, value) => async (dispatch) => {
+  // try {
+  //   const res = await api({
+  //     method: 'get',
+  //     url: `/tasks/?completed=${value}`,
+  //     headers: { Authorization: `Bearer ${token}` },
+  //   });
+  //   console.log(res.data.length);
+  //   dispatch({ type: TYPES.FETCH_TASKS_BY_FILTER, payload: res.data });
+  // } catch (error) {
+  //   console.log(error);
+  // }
 };
 
 export const fetchTask = (token, id) => async (dispatch) => {

@@ -21,7 +21,7 @@ class Header extends React.Component {
         <React.Fragment>
           <li>
             <a
-              href='#'
+              href='/login'
               className='nav__item cta btn--green'
               onClick={() => this.onLogoutButtonClick(this.props.user.token)}
             >

@@ -1,6 +1,7 @@
 import React from 'react';
 import './List.css';
 import { Link } from 'react-router-dom';
+
 const List = (props) => {
   const listItem = (task) => {
     return (
@@ -80,7 +81,7 @@ const List = (props) => {
   return (
     <div className='list'>
       <form className='search__box'>
-        <input type='text' class='search' />
+        <input type='text' className='search' />
         <button>Search</button>
       </form>
       <div className='list__header'>
@@ -88,6 +89,37 @@ const List = (props) => {
         <Link to={`/tasks/new`} className='btn cta btn--orange'>
           Add New
         </Link>
+      </div>
+      <div className='filter__area'>
+        <div className='searchCount'>
+          <label>Total Count: </label>
+          {props.tasks.length}
+        </div>
+        <div className='filters'>
+          {props.filter.label.map((filterName, index) => (
+            <div className='filter' key={index}>
+              <label htmlFor='filter' className='filter__label'>
+                {props.filter.label[index]}
+              </label>
+              <select
+                className='filter__type'
+                id='filter'
+                onChange={(event) => {
+                  props.filter.onChange[index](event.target.value);
+                }}
+              >
+                {props.filter.options[filterName].map((option, index) => (
+                  <option
+                    key={index}
+                    value={props.filter.values[filterName][index]}
+                  >
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </div>
+          ))}
+        </div>
       </div>
       {renderList(props.tasks)}
     </div>

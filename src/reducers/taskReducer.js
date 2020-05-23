@@ -4,11 +4,15 @@ export default (state = {}, action) => {
   switch (action.type) {
     case TYPES.FETCH_TASKS:
       return {
-        ...state,
         ...action.payload.reduce((newState, task) => {
           newState[task._id] = task;
           return newState;
         }, {}),
+      };
+    case TYPES.FETCH_TASK:
+      return {
+        ...state,
+        [action.payload._id]: action.payload,
       };
 
     case TYPES.ADD_TASK:
@@ -21,11 +25,7 @@ export default (state = {}, action) => {
         ...state,
         [action.payload._id]: action.payload,
       };
-    case TYPES.FETCH_TASK:
-      return {
-        ...state,
-        [action.payload._id]: action.payload,
-      };
+
     case TYPES.DELETE_TASK:
       const newState = { ...state };
       delete newState[action.payload._id];
